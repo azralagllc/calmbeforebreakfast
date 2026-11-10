@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Calm Before Breakfast">
+  <rect width="32" height="32" rx="6" fill="#FBF6EE"/>
+  <circle cx="16" cy="18" r="7" fill="#E8A87C"/>
+  <rect x="0" y="18" width="32" height="14" fill="#FBF6EE"/>
+  <line x1="4" y1="18" x2="28" y2="18" stroke="#9CAF98" stroke-width="1.5" stroke-linecap="round"/>
+</svg>

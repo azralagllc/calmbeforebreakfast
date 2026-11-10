@@ -1,0 +1,279 @@
+:root {
+  --cream: #FBF6EE;
+  --ink: #2B3440;
+  --apricot: #E8A87C;
+  --apricot-hover: #DC9468;
+  --sage: #9CAF98;
+  --blush: #F3D9C6;
+  --link: #5E7262;
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --measure: 38rem;
+  --radius: 0.75rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+  background: var(--cream);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 0 1.25rem;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+a {
+  color: var(--link);
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+::selection {
+  background: var(--blush);
+  color: var(--ink);
+}
+
+main {
+  width: min(var(--measure), 100%);
+  margin: 0 auto;
+  padding: 3rem 0 2.5rem;
+}
+
+.hero {
+  text-align: center;
+}
+
+.mark {
+  display: block;
+  width: 4.5rem;
+  height: auto;
+  margin: 0 auto 1.5rem;
+}
+
+h1 {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-serif);
+  font-size: clamp(2.25rem, 8vw, 3.35rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.subhead {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-serif);
+  font-size: clamp(1.15rem, 2.6vw, 1.4rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.promise {
+  margin: 0 auto;
+  max-width: 28rem;
+}
+
+.signup {
+  margin: 2.25rem 0 3rem;
+}
+
+.signup-row {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+label {
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+input[type="email"] {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.65rem 0.85rem;
+  border: 1.5px solid var(--ink);
+  border-radius: 0.4rem;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  appearance: none;
+}
+
+input[type="email"]::placeholder {
+  color: var(--link);
+  opacity: 1;
+}
+
+button[type="submit"] {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.7rem 1.15rem;
+  border: 0;
+  border-radius: 0.4rem;
+  background: var(--apricot);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  appearance: none;
+}
+
+button[type="submit"]:hover {
+  background: var(--apricot-hover);
+}
+
+button[type="submit"]:active {
+  transform: translateY(1px);
+}
+
+.microcopy {
+  margin: 0.75rem 0 0;
+  font-size: 0.9375rem;
+  text-align: center;
+}
+
+.sample {
+  background: var(--blush);
+  border-radius: var(--radius);
+  padding: 1.6rem 1.4rem 1.75rem;
+}
+
+.kicker {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h2 {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 3.5vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+blockquote {
+  margin: 0 0 1.35rem;
+  padding: 0 0 0 1rem;
+  border-left: 3px solid var(--apricot);
+}
+
+blockquote p {
+  margin: 0 0 0.6rem;
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+blockquote footer {
+  font-size: 0.875rem;
+  font-style: normal;
+}
+
+cite {
+  font-style: normal;
+}
+
+.sample > p {
+  margin: 0 0 1rem;
+}
+
+.sample > p:last-child,
+.sample .try {
+  margin-bottom: 0;
+}
+
+.try {
+  margin-top: 1.35rem;
+  padding: 0.95rem 1rem;
+  background: var(--cream);
+  border-radius: 0.5rem;
+  border-left: 3px solid var(--apricot);
+}
+
+.site-footer {
+  width: min(var(--measure), 100%);
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
+  font-size: 0.9375rem;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.thanks {
+  padding-top: 4.5rem;
+  text-align: center;
+}
+
+.thanks .promise {
+  margin-bottom: 2rem;
+}
+
+.back {
+  margin: 0;
+  font-size: 0.9375rem;
+}
+
+@media (min-width: 40rem) {
+  main {
+    padding-top: 4.5rem;
+  }
+
+  .signup-row {
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    column-gap: 0.65rem;
+  }
+
+  button[type="submit"] {
+    width: auto;
+    white-space: nowrap;
+  }
+
+  .sample {
+    padding: 2rem 2.1rem 2.1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button[type="submit"]:active {
+    transform: none;
+  }
+}
+
+@media (forced-colors: active) {
+  input[type="email"],
+  button[type="submit"] {
+    border: 1.5px solid ButtonText;
+  }
+}
