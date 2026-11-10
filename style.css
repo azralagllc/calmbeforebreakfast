@@ -675,3 +675,39 @@ cite {
 .thanks h1 {
   text-wrap: balance;
 }
+
+.freebie {
+  margin: 2rem auto 0;
+  max-width: 30rem;
+  padding: 1.25rem 1.25rem 1.4rem;
+  border-radius: 0.6rem;
+  background: var(--blush, #F3D9C6);
+  text-align: center;
+}
+
+.freebie h2 {
+  margin: 0 0 0.4rem;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.25rem;
+}
+
+.freebie p {
+  margin: 0 0 1rem;
+}
+
+.download {
+  display: inline-block;
+  min-height: 2.75rem;
+  padding: 0.7rem 1.15rem;
+  border-radius: 0.4rem;
+  background: var(--apricot);
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 1px 0 rgba(43, 52, 64, 0.1);
+}
+
+.download:hover,
+.download:focus-visible {
+  background: var(--apricot-hover);
+}
