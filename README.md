@@ -30,6 +30,7 @@ The `CNAME` file is already set to `calmbeforebreakfast.com`. After this repo is
 
 - `index.html` and `style.css`: the signup page
 - `thank-you.html`: shown after a successful signup
+- `confirmed.html`: Kit sends people here after they click the confirmation email
 - `CNAME`: GitHub Pages custom domain
 - `favicon.svg`
 
