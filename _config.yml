@@ -1,0 +1,5 @@
+# GitHub Pages is on the legacy Jekyll build. Keep generator files off the published site.
+# Folders that start with an underscore, including _templates, are already excluded.
+exclude:
+  - scripts
+  - README.md

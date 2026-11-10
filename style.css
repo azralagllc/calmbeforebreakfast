@@ -470,6 +470,212 @@ cite {
   }
 }
 
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0 0 2rem;
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.brand:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+.brand .mark {
+  width: 3rem;
+  margin: 0;
+  flex: none;
+}
+
+.note-page main,
+.notes-index main {
+  padding-top: 2.25rem;
+}
+
+.note-header,
+.notes-header {
+  margin: 0 0 2rem;
+}
+
+.note-page h1,
+.notes-index h1 {
+  text-align: left;
+  font-size: clamp(1.7rem, 6.2vw, 2.45rem);
+  text-wrap: balance;
+}
+
+.note-date {
+  margin: 0.65rem 0 0;
+  font-size: 0.9375rem;
+  color: var(--muted);
+}
+
+.note-page .kicker {
+  text-align: left;
+}
+
+.note-page h2,
+.notes-index h2 {
+  margin: 0 0 0.85rem;
+}
+
+.note-quote,
+.note-unpacking,
+.note-try,
+.related {
+  margin: 0 0 2.15rem;
+}
+
+.note-quote blockquote {
+  padding-left: 0.35rem;
+}
+
+.note-unpacking p,
+.note-try p {
+  margin: 0 0 1rem;
+}
+
+.note-try .try p:last-child {
+  margin-bottom: 0;
+}
+
+.signup-compact {
+  margin: 0 0 2.5rem;
+}
+
+.related-notes,
+.note-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.related-notes li,
+.note-list li {
+  margin: 0;
+  padding: 0.7rem 0;
+  border-top: 1px solid rgba(43, 52, 64, 0.1);
+}
+
+.related-notes li:last-child,
+.note-list li:last-child {
+  border-bottom: 1px solid rgba(43, 52, 64, 0.1);
+}
+
+.note-list a {
+  display: inline;
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.35;
+  text-decoration-thickness: 1px;
+}
+
+.note-list time {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.empty-notes {
+  margin: 0 0 2rem;
+  padding: 1rem 1.1rem;
+  background: var(--paper);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--sage);
+}
+
+.notes-index .signup-compact,
+.note-page .signup-compact {
+  margin-top: 0.25rem;
+}
+
+.not-found .back + .back {
+  margin-top: 0.5rem;
+}
+
+.footer-nav {
+  margin-top: 0.65rem;
+}
+
+@media (min-width: 40rem) {
+  .note-page main,
+  .notes-index main {
+    padding-top: 3.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .brand,
+  .note-header,
+  .notes-header,
+  .notes-list-wrap,
+  .note-quote,
+  .note-unpacking,
+  .note-try,
+  .related,
+  .signup-compact {
+    animation: fade-up 0.7s ease both;
+  }
+
+  .note-header,
+  .notes-header {
+    animation-delay: 0.08s;
+  }
+
+  .notes-list-wrap,
+  .note-quote {
+    animation-delay: 0.14s;
+  }
+
+  .note-unpacking {
+    animation-delay: 0.2s;
+  }
+
+  .note-try,
+  .notes-index .signup-compact {
+    animation-delay: 0.26s;
+  }
+
+  .note-page .signup-compact {
+    animation-delay: 0.32s;
+  }
+
+  .related {
+    animation-delay: 0.38s;
+  }
+}
+
+.notes-header .lede {
+  margin: 0.35rem 0 0;
+  max-width: 28rem;
+  text-align: left;
+}
+
+.notes-list-wrap {
+  margin: 0 0 2.25rem;
+}
+
+.site-footer p {
+  text-wrap: pretty;
+}
+
+.not-found h1,
+.thanks h1 {
+  text-wrap: balance;
+}
+
 .freebie {
   margin: 2rem auto 0;
   max-width: 30rem;
