@@ -5,11 +5,15 @@
   --apricot-hover: #DC9468;
   --sage: #9CAF98;
   --blush: #F3D9C6;
+  --paper: #FFFBF5;
+  --terracotta: #8C5340;
+  --muted: #4A5560;
   --link: #5E7262;
-  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+  --font-serif: "Fraunces", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
   --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --measure: 38rem;
   --radius: 0.75rem;
+  --paper-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='table' tableValues='0 0.055'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 *,
@@ -27,7 +31,15 @@ body {
   margin: 0;
   min-height: 100vh;
   padding: 0 1.25rem;
-  background: var(--cream);
+  background-color: var(--cream);
+  background-image: radial-gradient(
+    ellipse 120% 32rem at 50% -6rem,
+    rgba(232, 168, 124, 0.38) 0%,
+    rgba(243, 217, 198, 0.55) 28%,
+    rgba(251, 246, 238, 0.2) 62%,
+    var(--cream) 78%
+  );
+  background-repeat: no-repeat;
   color: var(--ink);
   font-family: var(--font-sans);
   font-size: 1.125rem;
@@ -67,12 +79,14 @@ main {
   display: block;
   width: 4.5rem;
   height: auto;
-  margin: 0 auto 1.5rem;
+  margin: 0 auto 1.25rem;
+  overflow: visible;
 }
 
 h1 {
   margin: 0 0 0.75rem;
   font-family: var(--font-serif);
+  font-optical-sizing: auto;
   font-size: clamp(2.25rem, 8vw, 3.35rem);
   font-weight: 600;
   line-height: 1.15;
@@ -82,6 +96,7 @@ h1 {
 .subhead {
   margin: 0 0 1.25rem;
   font-family: var(--font-serif);
+  font-optical-sizing: auto;
   font-size: clamp(1.15rem, 2.6vw, 1.4rem);
   font-style: italic;
   font-weight: 400;
@@ -93,8 +108,19 @@ h1 {
   max-width: 28rem;
 }
 
+.rule {
+  display: block;
+  width: 2.75rem;
+  height: 2px;
+  margin: 1.75rem auto 0;
+  border: 0;
+  border-radius: 1px;
+  background: var(--sage);
+  color: var(--sage);
+}
+
 .signup {
-  margin: 2.25rem 0 3rem;
+  margin: 1.85rem 0 3rem;
 }
 
 .signup-row {
@@ -141,6 +167,7 @@ button[type="submit"] {
   font-weight: 600;
   cursor: pointer;
   appearance: none;
+  box-shadow: 0 1px 0 rgba(43, 52, 64, 0.1);
 }
 
 button[type="submit"]:hover {
@@ -148,46 +175,114 @@ button[type="submit"]:hover {
 }
 
 button[type="submit"]:active {
-  transform: translateY(1px);
+  background: var(--apricot-hover);
 }
 
 .microcopy {
   margin: 0.75rem 0 0;
   font-size: 0.9375rem;
   text-align: center;
+  color: var(--muted);
 }
 
 .sample {
-  background: var(--blush);
-  border-radius: var(--radius);
-  padding: 1.6rem 1.4rem 1.75rem;
+  padding: 0.35rem 0 0.5rem;
 }
 
 .kicker {
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.85rem;
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  text-align: center;
+}
+
+.letter {
+  background-color: var(--paper);
+  background-image: var(--paper-grain);
+  border-radius: var(--radius);
+  box-shadow:
+    0 1px 1px rgba(43, 52, 64, 0.04),
+    0 10px 28px rgba(43, 52, 64, 0.1);
+  transform: rotate(-0.55deg);
+  overflow: hidden;
+}
+
+.letterhead {
+  padding: 0.95rem 1.25rem 0.9rem;
+  background: var(--blush);
+  border-bottom: 1px solid rgba(43, 52, 64, 0.08);
+}
+
+.letter-from,
+.letterhead h2 {
+  display: grid;
+  grid-template-columns: 4.6rem 1fr;
+  column-gap: 0.65rem;
+  align-items: start;
+  margin: 0;
+}
+
+.letter-from {
+  margin-bottom: 0.45rem;
+  font-size: 0.9375rem;
+  line-height: 1.4;
+}
+
+.letter-label {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1.4;
+  padding-top: 0.28em;
 }
 
 h2 {
-  margin: 0 0 1.25rem;
   font-family: var(--font-serif);
-  font-size: clamp(1.4rem, 3.5vw, 1.75rem);
+  font-optical-sizing: auto;
+  font-size: clamp(1.15rem, 3vw, 1.4rem);
   font-weight: 600;
-  line-height: 1.25;
+  line-height: 1.3;
+}
+
+.letterhead h2 .letter-label {
+  padding-top: 0.45em;
+}
+
+.letter-body {
+  padding: 1.45rem 1.35rem 1.6rem 1.7rem;
 }
 
 blockquote {
+  position: relative;
   margin: 0 0 1.35rem;
-  padding: 0 0 0 1rem;
-  border-left: 3px solid var(--apricot);
+  padding: 0 0 1.2rem;
+  border-bottom: 1px solid rgba(43, 52, 64, 0.1);
+}
+
+blockquote::before {
+  content: "\201C";
+  position: absolute;
+  left: 0;
+  top: -0.12em;
+  transform: translateX(-0.5em);
+  font-family: var(--font-serif);
+  font-size: 2.6rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--terracotta);
 }
 
 blockquote p {
   margin: 0 0 0.6rem;
   font-family: var(--font-serif);
+  font-optical-sizing: auto;
   font-size: 1.2rem;
   font-style: italic;
   line-height: 1.5;
@@ -196,18 +291,19 @@ blockquote p {
 blockquote footer {
   font-size: 0.875rem;
   font-style: normal;
+  color: var(--muted);
 }
 
 cite {
   font-style: normal;
 }
 
-.sample > p {
+.letter-body > p {
   margin: 0 0 1rem;
 }
 
-.sample > p:last-child,
-.sample .try {
+.letter-body > p:last-child,
+.letter-body .try {
   margin-bottom: 0;
 }
 
@@ -224,6 +320,7 @@ cite {
   margin: 0 auto;
   padding: 2rem 0 3rem;
   font-size: 0.9375rem;
+  color: var(--muted);
 }
 
 .site-footer p {
@@ -236,11 +333,15 @@ cite {
 }
 
 .thanks .promise {
-  margin-bottom: 2rem;
+  margin-bottom: 0;
+}
+
+.thanks .rule {
+  margin-top: 2rem;
 }
 
 .back {
-  margin: 0;
+  margin: 1.5rem 0 0;
   font-size: 0.9375rem;
 }
 
@@ -260,8 +361,91 @@ cite {
     white-space: nowrap;
   }
 
+  .letterhead {
+    padding: 1.05rem 1.7rem 1rem;
+  }
+
+  .letter-body {
+    padding: 1.75rem 1.85rem 1.9rem;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero,
+  .signup,
+  .sample,
+  .thanks .back {
+    animation: fade-up 0.7s ease both;
+  }
+
+  .signup,
+  .thanks .rule {
+    animation: fade-up 0.7s ease both;
+    animation-delay: 0.12s;
+  }
+
   .sample {
-    padding: 2rem 2.1rem 2.1rem;
+    animation-delay: 0.24s;
+  }
+
+  .thanks .back {
+    animation-delay: 0.2s;
+  }
+
+  .sun {
+    animation: sun-rise 1.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  button[type="submit"] {
+    transition:
+      transform 0.16s ease,
+      box-shadow 0.16s ease,
+      background-color 0.16s ease;
+  }
+
+  button[type="submit"]:hover,
+  button[type="submit"]:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(43, 52, 64, 0.16);
+  }
+
+  button[type="submit"]:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 0 rgba(43, 52, 64, 0.1);
+  }
+
+  .letter {
+    transition: transform 0.45s ease, box-shadow 0.45s ease;
+  }
+
+  .letter:hover,
+  .letter:focus-within {
+    transform: rotate(0deg);
+    box-shadow:
+      0 1px 1px rgba(43, 52, 64, 0.04),
+      0 14px 32px rgba(43, 52, 64, 0.12);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(0.7rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sun-rise {
+  from {
+    transform: translateY(11px);
+  }
+
+  to {
+    transform: translateY(0);
   }
 }
 
@@ -275,5 +459,13 @@ cite {
   input[type="email"],
   button[type="submit"] {
     border: 1.5px solid ButtonText;
+  }
+
+  .letter {
+    border: 1px solid CanvasText;
+  }
+
+  .rule {
+    background: CanvasText;
   }
 }
